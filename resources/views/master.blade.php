@@ -21,7 +21,39 @@
 <style>
     .custom-login{
         height: 785px;
-        padding-top:100px;
+        padding-top:150px;
     }
+    img.slider-img{
+        height: 600px !important;
+    }
+    .custom-product{
+        height: 825px;
+    }
+    .slider-text{
+        background-color: #24465454 !important;
+    }
+    .trending-img
+    {
+        height: 200px;
+
+    }
+    .trending-item{
+        float: left;
+        width: 20%;
+    }
+    .trending-wrapper{
+        margin: 40px;
+    }
+    .detail-img{
+        height: 325px;
+    }
+    .search-box{
+        width: 500px !important
+    }
+    .cart-list-divider {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
 </style>
 </html>
