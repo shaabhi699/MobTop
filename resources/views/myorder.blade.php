@@ -11,7 +11,7 @@
               <div class="row searched-item cart-list-divider">
                 <div class="col-sm-3">
                     <a href="detail/{{$item->id}}">
-                        <img class="trending-img" src="{{$item->gallery}}">
+                        <img class="trending-img" src="{{asset('storage/'.$item->path)}}">
                       </a>
                 </div>
                 <div class="col-sm-3">

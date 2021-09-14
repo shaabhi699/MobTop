@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <img class="detail-img" src="{{$product['gallery']}}" alt="">
+            <img class="detail-img" src="{{asset('storage/'.$product->path)}}" alt="">
         </div>
         <div class="col-sm-6">
             <a href="/">Go Back</a>
@@ -16,10 +16,10 @@
             <form action="/add_to_cart" method="POST">
                 <input type="hidden" name="product_id" value="{{$product['id']}}">
                 @csrf
-                <button class="btn btn-success" >Add To Cart</button>
+                <button class="btn btn-primary" >Add To Cart</button>
             </form>
             <br><br>
-            <button class="btn btn-primary" >Buy Now</button>
+            <a class="btn btn-success" href="/ordernow">Buy Now</a>
 
             
         </div>  

@@ -13,8 +13,9 @@ class ProductController extends Controller
 {
     function index()
     {
-        $data= Product::all();
-        return view('product',['products'=>$data]);
+        $products= Product::orderby('id','DESC')->get();
+        $productslimit=$products->take(6);
+        return view('product',compact('products','productslimit'));
     }
     function detail($id)
     {
@@ -45,11 +46,20 @@ class ProductController extends Controller
     }
     static function cartItem()
     {
-        $userId=Session::get('user')['id'];
-        return Cart::where('user_id',$userId)->count();
+        if(Session::has('user')){
+            $userId=Session::get('user')['id'];
+            return Cart::where('user_id',$userId)->count();
+        }
+        else
+        {
+            return redirect('/login');
+        }
+        
     }
     function cartList()
     {
+        // if(isset(Session::get('user')['id']))
+        // { 
         $userId=Session::get('user')['id'];
         $data= DB::table('cart')
         ->join('products','cart.product_id','products.id')
@@ -58,6 +68,10 @@ class ProductController extends Controller
         ->get();
 
         return view('cartlist',['products'=>$data]);
+        // }
+        // else{
+        //     return redirect('/login');
+        // }
     }
     function removeCart($id)
     {
@@ -94,13 +108,20 @@ class ProductController extends Controller
     }
     function myOrder()
     {
-        $userId=Session::get('user')['id'];
+        if(isset(Session::get('user')['id']))
+        {
+            $userId=Session::get('user')['id'];
         $orders= DB::table('orders')
         ->join('products','orders.product_id','products.id')
         ->where('orders.user_id',$userId)
         ->get();
 
         return view('myorder',['orders'=>$orders]);
+        }
+        else
+        {
+            return redirect('/login');
+        }
     }
 
 }

@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class UserAuth
+class AdminAuth
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,19 @@ class UserAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        if( $request->session()->has('user'))
+        if($request->session()->has('admin'))
         {
             return $next($request);
         }
-        return redirect('/login');
+
+        return redirect("/adminlogin");
+        // return '<script> 
+        
+        // alert("Unauthorized Login! Return Back");
+        // var baseurl=window.location.origin; 
+        // window.location.href=baseurl+"/";
+        
+        
+        // </script>';
     }
 }

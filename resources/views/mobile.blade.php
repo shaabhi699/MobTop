@@ -3,7 +3,7 @@
 
 <div class="custom-product">
       <div class="trending-wrapper">
-            <h4>Result for Products</h4>
+            <h4>Mobiles</h4>
             <div class="">
               @foreach ($products as $item)
               <div class="searched-item">
