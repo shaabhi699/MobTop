@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
 use Session;
 use Illuminate\Support\Facades\DB;
+=======
+>>>>>>> 2f5f4fed041eb79be46b84c01fd8cce99c5fbfe5
 
 class ProductController extends Controller
 {
     function index()
     {
+<<<<<<< HEAD
         $products= Product::orderby('id','DESC')->get();
         $productslimit=$products->take(6);
         return view('product',compact('products','productslimit'));
@@ -124,4 +128,8 @@ class ProductController extends Controller
         }
     }
 
+=======
+        return "welcome to product page";
+    }
+>>>>>>> 2f5f4fed041eb79be46b84c01fd8cce99c5fbfe5
 }

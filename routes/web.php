@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+<<<<<<< HEAD
 Use App\Http\Controllers\AdminController;
+=======
+>>>>>>> 2f5f4fed041eb79be46b84c01fd8cce99c5fbfe5
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +19,7 @@ Use App\Http\Controllers\AdminController;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/logout', function () {
     if(Session::has('user'))
     {
@@ -67,3 +71,11 @@ Route::get('addProduct', 'FileUploadController@fileUpload')->name('file.upload')
 
 Route::post('addProduct', 'FileUploadController@fileUploadPost')->name('file.upload.post');
 */
+=======
+Route::get('/login', function () {
+    return view('login');
+ });
+
+Route::post("/login",[UserController::class, 'login']);
+Route::get("/",[ProductController::class, 'index']);
+>>>>>>> 2f5f4fed041eb79be46b84c01fd8cce99c5fbfe5

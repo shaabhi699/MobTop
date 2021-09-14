@@ -22,7 +22,11 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\StartSession::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+<<<<<<< HEAD
        
+=======
+        \App\Http\Middleware\UserAuth::class,
+>>>>>>> 2f5f4fed041eb79be46b84c01fd8cce99c5fbfe5
     ];
 
     /**

@@ -7,6 +7,7 @@
             $table->string("password");
             $table->timestamps();
         });
+<<<<<<< HEAD
     }
 
     <?php
@@ -14,3 +15,6 @@
   $total= ProductController::cartItem(); 
     //{{$total}}
 ?>
+=======
+    }
+>>>>>>> 2f5f4fed041eb79be46b84c01fd8cce99c5fbfe5
